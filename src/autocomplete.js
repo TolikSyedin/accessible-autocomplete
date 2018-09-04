@@ -176,6 +176,15 @@ export default class Autocomplete extends Component {
       query: newQuery,
       selected: null
     })
+
+    if (this.props.selectElement.multiple) {
+      // Reset input state
+      this.setState({
+        menuOpen: false,
+        selected: null,
+        query: ''
+      })
+    }
   }
 
   handleOptionBlur (event, index) {
